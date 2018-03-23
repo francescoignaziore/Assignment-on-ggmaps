@@ -1,0 +1,215 @@
+
+
+\documentclass[a0,portrait]{a0poster}
+
+\usepackage{multicol} % This is so we can have multiple columns of text side-by-side
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+
+\usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
+
+\usepackage{times} % Use the times font
+%\usepackage{palatino} % Uncomment to use the Palatino font
+
+\usepackage{graphicx} % Required for including images
+%\graphicspath{} % Location of the graphics files
+\usepackage{booktabs} % Top and bottom rules for table
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+\usepackage{wrapfig} % Allows wrapping text around tables and figures
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+%----------------------------------------------------------------------------------------
+%	POSTER HEADER 
+%----------------------------------------------------------------------------------------
+
+% The header is divided into two boxes:
+% The first is 75% wide and houses the title, subtitle, names, university/organization and contact information
+% The second is 25% wide and houses a logo for your university/organization or a photo of you
+% The widths of these boxes can be easily edited to accommodate your content as you see fit
+
+\begin{minipage}[b]{0.75\linewidth}
+\veryHuge \color{NavyBlue} \textbf{Bude} \color{Black}\\[1cm]% Title
+\Huge\color{NavyBlue}\textbf   {The pearl of Cornwall}\\[2cm] % Subtitle
+\huge \textbf{Francesco Ignazio Re}\\[0.5cm] % Author(s)
+\Large \texttt{Assignment 6}\\
+\end{minipage}
+%
+\begin{minipage}[b]{0.25\linewidth}
+\includegraphics[width=20cm]{logo.png}\\
+\end{minipage}
+
+\vspace{1cm} % A bit of extra whitespace between the header and poster content
+
+%----------------------------------------------------------------------------------------
+
+\begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\color{Maroon} % Navy color for the abstract
+
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+
+\section*{Introduction}
+
+\begin{Large}
+
+Visit Bude on the north of Cornwall for a holiday that has something for everyone - from romantic retreats for couples, action filled family holidays, or a heaven for the nature or geology enthusiast. Bude has twice been voted for the Best UK Coastal Resort in the British Travel Awards, making it an excellent choice for a holiday destination.
+
+\end{Large}
+
+<<echo=FALSE, results=hide>>=
+
+# library(ggmap)
+# library(tidyverse)
+# 
+# 
+# gc <- geocode("Summerleaze Beach, Bude, England")
+# gc <- geocode("Summerleaze Beach, Bude, England")
+# gc <- geocode("Summerleaze Beach, Bude, England")
+# 
+# map <- get_map(gc, zoom = 15)
+# 
+# map_w <- get_map(gc, maptype = "watercolor", zoom = 15)
+# 
+# 
+# b1 <- geocode("Summerleaze Beach, Bude, England")
+# b1 <- geocode("Summerleaze Beach, Bude, England")
+# 
+# b2 <- geocode("Crooklets Beach, South West Coast Path, Bude, England")
+# b2 <- geocode("Crooklets Beach, South West Coast Path, Bude, England")
+# 
+# 
+# crick <- geocode("S W Coast Path, Bude EX23 8HN, England")
+# crick <- geocode("S W Coast Path, Bude EX23 8HN, England")
+# 
+# 
+# pub <-  geocode("Life's A Beach, Summerleaze Crescent, Bude, UK")
+# pub <-  geocode("Life's A Beach, Summerleaze Crescent, Bude, UK")
+# 
+# 
+# data1 <- rbind(b1,b2,crick,pub)
+# 
+# names <- c("Summerleaze Beach","Crooklets Beach","Cricket's grounds","Pub Life's a Beach")
+# data1 <- cbind(data1,names)
+# 
+# 
+# from <- "S W Coast Path, Bude EX23 8HN, UK"
+# to <- "Life's A Beach, Summerleaze Crescent, Bude, UK"
+# route_df <- route(from, to,mode="walking", structure = "route")
+# route_df <- route(from, to,mode="walking", structure = "route")
+
+#<<label=fig1, fig=TRUE, echo=FALSE, include=FALSE>>= 
+# ggmap(map) +
+#   geom_path(
+#     aes(x = lon, y = lat), colour = "tomato4", size = 1,
+#     data = route_df, lineend = "round"
+#   ) +
+#   geom_point(
+#     aes(x = lon, y = lat, col = names),
+#     data = data1,size = 5) +
+#   geom_text(x=-4.550, y=50.8337, label="5 min walk!", angle = 45, colour = "tomato4",size = 4)+
+#   theme(axis.line=element_blank(),axis.text.x=element_blank(),
+#         axis.text.y=element_blank(),axis.ticks=element_blank(),
+#         axis.title.x=element_blank(),
+#         axis.title.y=element_blank())
+
+@
+
+
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{fig2}
+\end{center}\vspace{1cm}
+
+
+
+
+\section*{Main activities}
+\begin{Large}
+
+With a wide range of fun activities, sports and adventure pursuits available, Bude is one of the best places in Cornwall to enjoy your favourite pastime. 
+
+\end{Large}
+
+
+\subsection*{England's most beautiful cricket grounds}
+\begin{Large}
+
+Bude North Cornwall Cricket Club is situated on the clifftops at Bude. It is quite simply one of the most spectacular cricketing locations in the world with the Atlantic coast as its backdrop. Everyone is welcome at this friendly club.
+
+\end{Large}
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{fig3}
+\end{center}\vspace{1cm}
+
+\subsection*{Summerleaze Beach}
+\begin{Large}
+
+Summerleaze Beach is Bude's central hub of sand, surf and sun, and it's the first port of call for many visitors. Clean, safe and easy on the eye, Summerleaze Beach is a big hit with surfers, beach bums and families. 
+
+\end{Large}
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{fig4}
+\end{center}\vspace{1cm}
+
+\subsection*{Croocklets Beach}
+\begin{Large}
+
+A wide expanse of golden sand is exposed at low tide, bordered by rocky outcrops ideal for rock-pooling. Crooklets is at the north side of Bude and can be reached by a short walk over the Summerleaze Down or down the hill from the town centre.
+
+\end{Large}
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{fig5}
+\end{center}\vspace{1cm}
+
+
+\subsection*{Stop for a drink at Life's a beach}
+\begin{Large}
+
+Stop by Life's a beach,a beautiful restaurant which nestles among rugged cliffs not so far from the cricket ground.
+
+
+
+\end{Large}
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{fig6}
+\end{center}\vspace{1cm}
+
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{fig1}
+\end{center}\vspace{1cm}
+
+
+
+\color{DarkSlateGray} % Set the color back to DarkSlateGray for the rest of the content
+
+%----------------------------------------------------------------------------------------
+%	FORTHCOMING RESEARCH
+%----------------------------------------------------------------------------------------
+
+\section*{Information}
+\begin{Large}
+Bude Tourist Information Centre has knowledgeable staff who can help with any local queries. They offer daytrips to Lundy Island, sailing from Bideford or Illfracombe. For walkers, they may be able to hold your luggage or arrange for it to be sent to your next destination. You'll also find the new Canal Visitor Centre; a hands-on and informative display, where you can learn more about the famous Bude Canal.
+
+For further information check our page on Trip Advisor and check out the reviews of all the guests that have been here already.
+
+
+\end{Large}
+
+\end{multicols}
+\end{document}
