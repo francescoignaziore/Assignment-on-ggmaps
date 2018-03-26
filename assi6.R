@@ -2,30 +2,31 @@
 library(ggmap)
 library(tidyverse)
 
-
+#We get the geocode for the overall map that we center in Summerleaze Beach, Bude.
 gc <- geocode("Summerleaze Beach, Bude, England")
-
 map <- get_map(gc, zoom = 15)
-
 map_w <- get_map(gc, maptype = "watercolor", zoom = 15)
 
 
+#We get the code of the different place we want to show on the map
+
 b1 <- geocode("Summerleaze Beach, Bude, England")
-
 b2 <- geocode("Crooklets Beach, South West Coast Path, Bude, England")
-
-
 crick <- geocode("S W Coast Path, Bude EX23 8HN, England")
-
 pub <-  geocode("Life's A Beach, Summerleaze Crescent, Bude, UK")
+castle <- geocode("The Wharf, Bude EX23 8LG, UK")
+golf <- geocode("Burn View, Bude EX23 8DA, UK")
+compass <- geocode("Bude EX23 8SE, UK")
+#Let's create a dataframe containing the locations and names of the places we want to display
 
 
-data1 <- rbind(b1,b2,crick,pub)
-
-names <- c("Summerleaze Beach","Crooklets Beach","Cricket's grounds","Pub Life's a Beach")
+data1 <- rbind(b1,b2,crick,pub,castle,golf,compass)
+names <- c("Summerleaze Beach","Crooklets Beach",
+           "Cricket's grounds","Pub Life's a Beach","The Castle Bude","Golf Club",
+           "Compass Point")
 data1 <- cbind(data1,names)
 
-data1
+#Let's create the route from the Cricket ground to the Pub.
 
 from <- "S W Coast Path, Bude EX23 8HN, UK"
 to <- "Life's A Beach, Summerleaze Crescent, Bude, UK"
@@ -45,6 +46,7 @@ ggmap(map) +
         axis.text.y=element_blank(),axis.ticks=element_blank(),
         axis.title.x=element_blank(),
         axis.title.y=element_blank())
+
 
 
 

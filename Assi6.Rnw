@@ -8,27 +8,14 @@
 
 \usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
 
-\usepackage{times} % Use the times font
-%\usepackage{palatino} % Uncomment to use the Palatino font
-
-\usepackage{graphicx} % Required for including images
-%\graphicspath{} % Location of the graphics files
-\usepackage{booktabs} % Top and bottom rules for table
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{booktabs} 
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
-\usepackage{wrapfig} % Allows wrapping text around tables and figures
-
+\usepackage{wrapfig} 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
-
-%----------------------------------------------------------------------------------------
-%	POSTER HEADER 
-%----------------------------------------------------------------------------------------
-
-% The header is divided into two boxes:
-% The first is 75% wide and houses the title, subtitle, names, university/organization and contact information
-% The second is 25% wide and houses a logo for your university/organization or a photo of you
-% The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[b]{0.75\linewidth}
 \veryHuge \color{NavyBlue} \textbf{Bude} \color{Black}\\[1cm]% Title
@@ -45,19 +32,9 @@
 
 %----------------------------------------------------------------------------------------
 
-\begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
+\begin{multicols}{2}
 
-%----------------------------------------------------------------------------------------
-%	ABSTRACT
-%----------------------------------------------------------------------------------------
-
-\color{Maroon} % Navy color for the abstract
-
-
-%----------------------------------------------------------------------------------------
-%	INTRODUCTION
-%----------------------------------------------------------------------------------------
-
+\color{Maroon}
 
 \section*{Introduction}
 
@@ -68,13 +45,15 @@ Visit Bude on the north of Cornwall for a holiday that has something for everyon
 \end{Large}
 
 <<echo=FALSE, results=hide>>=
+#THE CODE IS COMMENTED AS THE GEOCODE STATEMENT USUALLY DOESN'T RUN THE FIRST TIME, BLOCKING THE PDF FROM COMPILING CORRECTLY. SO, I HAVE UPLOADED TO THE REPOSITORY FIG1/FIG6, THAT ARE THE IMAGES USED IN THE DOCUMENT.
+
+
+
 
 # library(ggmap)
 # library(tidyverse)
 # 
 # 
-# gc <- geocode("Summerleaze Beach, Bude, England")
-# gc <- geocode("Summerleaze Beach, Bude, England")
 # gc <- geocode("Summerleaze Beach, Bude, England")
 # 
 # map <- get_map(gc, zoom = 15)
@@ -83,17 +62,13 @@ Visit Bude on the north of Cornwall for a holiday that has something for everyon
 # 
 # 
 # b1 <- geocode("Summerleaze Beach, Bude, England")
-# b1 <- geocode("Summerleaze Beach, Bude, England")
 # 
-# b2 <- geocode("Crooklets Beach, South West Coast Path, Bude, England")
 # b2 <- geocode("Crooklets Beach, South West Coast Path, Bude, England")
 # 
 # 
 # crick <- geocode("S W Coast Path, Bude EX23 8HN, England")
-# crick <- geocode("S W Coast Path, Bude EX23 8HN, England")
 # 
 # 
-# pub <-  geocode("Life's A Beach, Summerleaze Crescent, Bude, UK")
 # pub <-  geocode("Life's A Beach, Summerleaze Crescent, Bude, UK")
 # 
 # 
