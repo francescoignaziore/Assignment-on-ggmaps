@@ -65,3 +65,6 @@ ggmap(map_w) +
   geom_text(x=-4.545, y=50.825, label="Bude",fontface =2,size=10, colour = "tomato4")
 
 
+### I've added a comment. Please accept the pull request
+# - Brian
+
